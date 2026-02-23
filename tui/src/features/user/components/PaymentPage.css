@@ -1,0 +1,336 @@
+.pp-page {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at top, #1a1a2e 0%, #0f0f1a 60%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+    font-family: 'Inter', sans-serif;
+}
+
+.pp-loading {
+    text-align: center;
+    color: #94a3b8;
+}
+
+.pp-spinner,
+.pp-btn-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    border-top-color: #6366f1;
+    border-radius: 50%;
+    animation: ppSpin 0.8s linear infinite;
+    margin: 0 auto 16px;
+}
+
+.pp-btn-spinner {
+    width: 18px;
+    height: 18px;
+    border-width: 2px;
+    margin: 0;
+    display: inline-block;
+}
+
+@keyframes ppSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.pp-container {
+    display: flex;
+    background: #16213e;
+    border-radius: 24px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 820px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* Summary Panel */
+.pp-summary {
+    background: linear-gradient(160deg, #6366f1 0%, #4f46e5 50%, #1e1b4b 100%);
+    padding: 36px 28px;
+    width: 300px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    color: #fff;
+}
+
+.pp-logo {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.pp-summary h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 6px;
+}
+
+.pp-summary-detail {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.pp-summary-detail.total {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.pp-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 4px 0;
+}
+
+.pp-secure-badge {
+    margin-top: auto;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+}
+
+.pp-test-note {
+    background: rgba(234, 179, 8, 0.2);
+    border: 1px solid rgba(234, 179, 8, 0.4);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #fde047;
+    text-align: center;
+}
+
+/* Checkout Panel */
+.pp-checkout {
+    flex: 1;
+    padding: 36px 32px;
+}
+
+.pp-checkout h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 4px;
+}
+
+.pp-checkout-sub {
+    color: #64748b;
+    font-size: 13px;
+    margin: 0 0 24px;
+}
+
+.pp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pp-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.pp-field label {
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pp-field input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.2s, background 0.2s;
+    letter-spacing: 0.5px;
+}
+
+.pp-field input:focus {
+    border-color: #6366f1;
+    background: rgba(99, 102, 241, 0.08);
+}
+
+.pp-row {
+    display: flex;
+    gap: 14px;
+}
+
+.pp-error {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #fca5a5;
+    font-size: 13px;
+}
+
+.pp-pay-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 15px;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    letter-spacing: 0.3px;
+    margin-top: 4px;
+}
+
+.pp-pay-btn:hover:not(:disabled) {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+.pp-pay-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pp-cards-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    color: #475569;
+    font-size: 13px;
+    justify-content: center;
+}
+
+/* Success */
+.pp-success-card {
+    background: #16213e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 48px 40px;
+    text-align: center;
+    max-width: 480px;
+    width: 100%;
+    color: #fff;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+}
+
+.pp-success-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+    animation: ppPop 0.5s ease;
+}
+
+@keyframes ppPop {
+    0% {
+        transform: scale(0);
+    }
+
+    70% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pp-success-card h2 {
+    font-size: 26px;
+    margin: 0 0 8px;
+}
+
+.pp-success-sub {
+    color: #94a3b8;
+    margin: 0 0 28px;
+}
+
+.pp-receipt {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    padding: 16px 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.pp-receipt-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+.pp-receipt-val {
+    font-weight: 600;
+    color: #fff;
+}
+
+.pp-receipt-val.green {
+    color: #34d399;
+}
+
+.pp-receipt-val.muted {
+    color: #64748b;
+}
+
+.pp-receipt-val.mono {
+    font-size: 12px;
+    font-family: monospace;
+}
+
+.pp-btn {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 28px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    width: 100%;
+}
+
+.pp-btn:hover {
+    opacity: 0.88;
+}
+
+@media (max-width: 640px) {
+    .pp-container {
+        flex-direction: column;
+    }
+
+    .pp-summary {
+        width: 100%;
+    }
+
+    .pp-checkout {
+        padding: 24px;
+    }
+}

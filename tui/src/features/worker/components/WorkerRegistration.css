@@ -1,0 +1,222 @@
+/* ======== WORKER REGISTRATION / PROFILE EDIT ======== */
+.wr-page {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #0a0e1a 0%, #111827 100%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2.5rem 1rem 4rem;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.wr-card {
+    background: #161d2e;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 680px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Header ── */
+.wr-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.wr-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #f1f5f9;
+    margin: 0 0 0.5rem;
+}
+
+.wr-subtitle {
+    font-size: 0.88rem;
+    color: #64748b;
+    margin: 0;
+}
+
+/* ── Alerts ── */
+.wr-alert {
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-size: 0.87rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.wr-alert-error {
+    background: rgba(239, 68, 68, 0.12);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.wr-alert-success {
+    background: rgba(34, 197, 94, 0.12);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+/* ── Form Layout ── */
+.wr-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.wr-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.wr-row.three {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 540px) {
+
+    .wr-row,
+    .wr-row.three {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Fields ── */
+.wr-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.wr-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.wr-input {
+    background: #1e2a40;
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
+    color: #e2e8f0;
+    outline: none;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.wr-input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.wr-input::placeholder {
+    color: #475569;
+}
+
+.wr-textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.wr-readonly {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* ── Rate with prefix ── */
+.wr-input-prefix-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.wr-prefix {
+    position: absolute;
+    left: 0.85rem;
+    color: #6366f1;
+    font-weight: 700;
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+
+.wr-input-prefix {
+    padding-left: 1.8rem;
+}
+
+/* ── Availability Toggle ── */
+.wr-toggle-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.wr-toggle-btn {
+    background: #1e2a40;
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: left;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.wr-toggle-btn:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+}
+
+.wr-toggle-active {
+    border-color: #6366f1 !important;
+    background: rgba(99, 102, 241, 0.12) !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.wr-toggle-label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #e2e8f0;
+}
+
+.wr-toggle-desc {
+    font-size: 0.72rem;
+    color: #64748b;
+}
+
+/* ── Submit ── */
+.wr-submit {
+    margin-top: 0.5rem;
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: 12px;
+    border: none;
+    font-size: 0.97rem;
+    font-weight: 800;
+    font-family: inherit;
+    letter-spacing: 0.02em;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+}
+
+.wr-submit:hover:not(:disabled) {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.wr-submit:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}

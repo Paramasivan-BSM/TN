@@ -1,0 +1,265 @@
+/* ResultPage.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Global Reset/Defaults for the component */
+.result-page-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #f8fafc;
+    overflow: hidden;
+    color: #1e293b;
+}
+
+/* Sidebar Styles */
+.result-sidebar {
+    width: 400px;
+    /* Slightly wider for better content fit */
+    padding: 24px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.04);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    border-right: 1px solid #e2e8f0;
+}
+
+.result-header {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    padding-bottom: 15px;
+    z-index: 10;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.result-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 20px;
+}
+
+/* Worker Card Styles */
+.result-card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    padding: 20px;
+    cursor: pointer;
+    border: 1px solid #f1f5f9;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.result-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    border-color: #e2e8f0;
+}
+
+.result-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #3b82f6;
+    /* Accent color strip */
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.result-card:hover::before {
+    opacity: 1;
+}
+
+.result-name {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    letter-spacing: -0.025em;
+}
+
+.result-skill {
+    margin: 0 0 16px 0;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.result-badge-container {
+    margin-bottom: 16px;
+    display: flex;
+    gap: 8px;
+}
+
+.result-badge {
+    padding: 6px 12px;
+    border-radius: 9999px;
+    /* Pill shape */
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+}
+
+/* Specific Badge Colors */
+/* Note: Inline styles in JS might override this, but this is good fallback/structure */
+
+.result-info {
+    margin: 8px 0;
+    color: #475569;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.result-coords {
+    margin: 8px 0 0;
+    color: #94a3b8;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.result-pin-icon {
+    font-size: 14px;
+}
+
+/* Button Styling in Card */
+.view-profile-btn {
+    margin-top: 16px !important;
+    /* Override inline styles if possible, but consistent referencing */
+    width: 100%;
+    padding: 10px 16px !important;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3) !important;
+    transition: all 0.2s ease !important;
+    text-align: center;
+}
+
+.view-profile-btn:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.4) !important;
+    transform: translateY(-1px);
+}
+
+.view-profile-btn:active {
+    transform: translateY(0);
+}
+
+/* Map Container Styles */
+.result-map-wrapper {
+    flex-grow: 1;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.result-map {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Popup Customization */
+.leaflet-popup-content-wrapper {
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 0;
+    overflow: hidden;
+}
+
+.leaflet-popup-content {
+    margin: 0;
+    width: 200px !important;
+}
+
+.leaflet-popup-content>div {
+    padding: 16px;
+    text-align: center;
+}
+
+.leaflet-popup-content h3 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.leaflet-popup-content p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* Custom Scrollbar for Sidebar */
+.result-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.result-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.result-sidebar::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 20px;
+}
+
+.result-sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: #94a3b8;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .result-page-container {
+        flex-direction: column-reverse;
+    }
+
+    .result-sidebar {
+        width: 100%;
+        height: 60%;
+        padding: 16px;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+        border-right: none;
+        border-top: 1px solid #e2e8f0;
+        border-radius: 20px 20px 0 0;
+        /* Rounded top corners for sheet-like effect */
+    }
+
+    .result-map-wrapper {
+        height: 40%;
+    }
+
+    .result-header {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+}

@@ -1,0 +1,9 @@
+const { latitude, longitude } =
+    useSelector((state) => state.location);
+
+
+
+  const handleSearchChange = (event, value) => {
+    setSelectedService(value);
+    console.log("Selected service:", value);
+  };

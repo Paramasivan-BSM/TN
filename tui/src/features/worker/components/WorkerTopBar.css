@@ -1,0 +1,194 @@
+/* ========= WORKER TOP BAR ========= */
+.wtb-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 14, 26, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    font-family: 'Inter', sans-serif;
+}
+
+.wtb-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Logo */
+.wtb-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.wtb-logo-icon {
+    font-size: 1.3rem;
+}
+
+.wtb-logo-text {
+    font-size: 1.05rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #38ef7d, #11998e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.wtb-logo-pro {
+    color: #a78bfa;
+    -webkit-text-fill-color: #a78bfa;
+    font-weight: 600;
+}
+
+/* Nav links */
+.wtb-links {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-left: auto;
+}
+
+@media (max-width: 640px) {
+    .wtb-links {
+        display: none;
+    }
+}
+
+.wtb-link {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.4rem 0.9rem;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+}
+
+.wtb-link:hover {
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.wtb-link-active {
+    color: #38ef7d !important;
+    background: rgba(56, 239, 125, 0.1) !important;
+}
+
+/* Right */
+.wtb-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: auto;
+}
+
+@media (min-width: 641px) {
+    .wtb-right {
+        margin-left: 0;
+    }
+}
+
+.wtb-logout {
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    background: rgba(239, 68, 68, 0.08);
+    color: #f87171;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: none;
+}
+
+@media (min-width: 641px) {
+    .wtb-logout {
+        display: block;
+    }
+}
+
+.wtb-logout:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.7);
+}
+
+/* Burger */
+.wtb-burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+@media (max-width: 640px) {
+    .wtb-burger {
+        display: flex;
+    }
+}
+
+.wtb-burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #94a3b8;
+    border-radius: 2px;
+    transition: background 0.2s;
+}
+
+.wtb-burger:hover span {
+    background: #38ef7d;
+}
+
+/* Mobile menu */
+.wtb-mobile-menu {
+    background: rgba(10, 14, 26, 0.97);
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 0.75rem 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.wtb-mobile-link {
+    text-decoration: none;
+    color: #94a3b8;
+    padding: 0.65rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.wtb-mobile-link:hover {
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.wtb-mobile-logout {
+    margin-top: 0.5rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    background: rgba(239, 68, 68, 0.06);
+    color: #f87171;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+}
+
+.wtb-mobile-logout:hover {
+    background: rgba(239, 68, 68, 0.15);
+}
